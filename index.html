@@ -57,6 +57,9 @@
     }
 
     async function scanCode() {
+      const result = await lif.scanCode()
+      document.getElementById("scanCode").append(result.value)
+
     }
 
     function openWindow() {
