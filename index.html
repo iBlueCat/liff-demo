@@ -101,11 +101,231 @@
     async function sendMsg() {
       if (liff.getContext().type !== "none") {
         await liff.sendMessages([
-          {
-            "type": "sticker",
-            "packageId": "11537",
-            "stickerId": "52002735"
-          }
+        {
+  "type": "flex",
+  "altText": "Flex Message",
+  "contents": {
+    "type": "bubble",
+    "hero": {
+      "type": "image",
+      "url": "https://cdn.almanacx.com/ebib.me/assets/public/event/10000Kcal/3x4-1-Poster-10000Kcal.jpg",
+      "align": "center",
+      "gravity": "center",
+      "size": "full",
+      "aspectRatio": "20:13",
+      "aspectMode": "cover",
+      "action": {
+        "type": "uri",
+        "label": "Action",
+        "uri": "https://linecorp.com"
+      }
+    },
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "spacing": "md",
+      "contents": [
+        {
+          "type": "text",
+          "text": "Summary Result",
+          "size": "xl",
+          "align": "center",
+          "gravity": "top",
+          "weight": "bold",
+          "color": "#070707"
+        },
+        {
+          "type": "text",
+          "text": "Date 25 May 2020",
+          "size": "md",
+          "align": "center",
+          "weight": "bold"
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "spacing": "sm",
+          "contents": [
+            {
+              "type": "box",
+              "layout": "baseline",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "1 - 49%",
+                  "size": "md",
+                  "align": "start",
+                  "weight": "bold",
+                  "color": "#010000"
+                },
+                {
+                  "type": "icon",
+                  "url": "https://cdn.almanacx.com/ebib.me/assets/public/male-icon.jpg",
+                  "margin": "xl"
+                },
+                {
+                  "type": "text",
+                  "text": "28",
+                  "flex": 0,
+                  "margin": "sm",
+                  "weight": "bold"
+                },
+                {
+                  "type": "icon",
+                  "url": "https://cdn.almanacx.com/ebib.me/assets/public/female-icon.jpg",
+                  "margin": "xxl"
+                },
+                {
+                  "type": "text",
+                  "text": "67",
+                  "align": "start",
+                  "weight": "bold"
+                }
+              ]
+            },
+            {
+              "type": "box",
+              "layout": "baseline",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "50-79%",
+                  "size": "md",
+                  "align": "start",
+                  "weight": "bold",
+                  "color": "#010000"
+                },
+                {
+                  "type": "icon",
+                  "url": "https://cdn.almanacx.com/ebib.me/assets/public/male-icon.jpg",
+                  "margin": "xl"
+                },
+                {
+                  "type": "text",
+                  "text": "26",
+                  "flex": 0,
+                  "margin": "sm",
+                  "weight": "bold"
+                },
+                {
+                  "type": "icon",
+                  "url": "https://cdn.almanacx.com/ebib.me/assets/public/female-icon.jpg",
+                  "margin": "xxl"
+                },
+                {
+                  "type": "text",
+                  "text": "33",
+                  "align": "start",
+                  "weight": "bold"
+                }
+              ]
+            },
+            {
+              "type": "box",
+              "layout": "baseline",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "80-99%",
+                  "size": "md",
+                  "align": "start",
+                  "weight": "bold",
+                  "color": "#010000"
+                },
+                {
+                  "type": "icon",
+                  "url": "https://cdn.almanacx.com/ebib.me/assets/public/male-icon.jpg",
+                  "margin": "xl"
+                },
+                {
+                  "type": "text",
+                  "text": "35",
+                  "flex": 0,
+                  "margin": "sm",
+                  "weight": "bold"
+                },
+                {
+                  "type": "icon",
+                  "url": "https://cdn.almanacx.com/ebib.me/assets/public/female-icon.jpg",
+                  "margin": "xxl"
+                },
+                {
+                  "type": "text",
+                  "text": "31",
+                  "align": "start",
+                  "weight": "bold"
+                }
+              ]
+            },
+            {
+              "type": "box",
+              "layout": "baseline",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "Finished",
+                  "size": "md",
+                  "align": "start",
+                  "weight": "bold",
+                  "color": "#010000"
+                },
+                {
+                  "type": "icon",
+                  "url": "https://cdn.almanacx.com/ebib.me/assets/public/male-icon.jpg",
+                  "margin": "xl"
+                },
+                {
+                  "type": "text",
+                  "text": "81",
+                  "flex": 0,
+                  "margin": "sm",
+                  "weight": "bold"
+                },
+                {
+                  "type": "icon",
+                  "url": "https://cdn.almanacx.com/ebib.me/assets/public/female-icon.jpg",
+                  "margin": "xxl"
+                },
+                {
+                  "type": "text",
+                  "text": "46",
+                  "align": "start",
+                  "weight": "bold"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Thank you.",
+          "size": "xl",
+          "align": "center",
+          "gravity": "center",
+          "weight": "bold",
+          "color": "#AAAAAA"
+        }
+      ]
+    },
+    "footer": {
+      "type": "box",
+      "layout": "baseline",
+      "contents": [
+        {
+          "type": "spacer",
+          "size": "xxl"
+        },
+        {
+          "type": "text",
+          "text": "Powered by eBIB.Me",
+          "size": "sm",
+          "align": "end",
+          "color": "#A8A2A2"
+        }
+      ]
+    }
+  }
+}
         ])
         alert("Messages Sent")
       }
