@@ -42,8 +42,12 @@
     console.log("Hello World!")
   </script>
 
-  <script src="https://static.line-scdn.net/liff/edge/versions/2.1.13/sdk.js"></script>
+  <!-- LIFF SDK v2.20.5 (Latest) -->
+  <script src="https://static.line-scdn.net/liff/edge/versions/2.20.5/sdk.js"></script>
   <script>
+    /**
+     * Creates universal links for sharing
+     */
     function createUniversalLink() {
       const link1 = liff.permanentLink.createUrl()
       document.getElementById("universalLink1").append(link1)
@@ -53,6 +57,9 @@
       document.getElementById("universalLink2").append(link2)
     }
 
+    /**
+     * Share message using Share Target Picker
+     */
     async function shareMsg() {
       await liff.shareTargetPicker([
         {
@@ -283,24 +290,35 @@
       ]
     }
   }
-}
-      ])
+}        ])
     }
 
+    /**
+     * Logout from LIFF
+     */
     function logOut() {
       liff.logout()
       window.location.reload()
     }
 
+    /**
+     * Close LIFF window
+     */
     function closed() {
       liff.closeWindow()
     }
 
+    /**
+     * Scan QR code using LIFF
+     */
     async function scanCode() {
       const result = await liff.scanCode()
       document.getElementById("scanCode").append(result.value)
     }
 
+    /**
+     * Open external URL
+     */
     function openWindow() {
       liff.openWindow({
         url: "https://www.google.com",
@@ -308,6 +326,9 @@
       })
     }
 
+    /**
+     * Check friendship status with bot
+     */
     async function getFriendship() {
       const friend = await liff.getFriendship()
       document.getElementById("friendship").append(friend.friendFlag)
@@ -318,6 +339,9 @@
       } 
     }
 
+    /**
+     * Send message to chat
+     */
     async function sendMsg() {
       if (liff.getContext().type !== "none") {
         await liff.sendMessages([
@@ -545,12 +569,14 @@
       ]
     }
   }
-}
-        ])
+}        ])
         alert("Messages Sent")
       }
     }
 
+    /**
+     * Get LIFF context information
+     */
     function getContext() {
       document.getElementById("type").append(liff.getContext().type)
       document.getElementById("viewType").append(liff.getContext().viewType)
@@ -559,6 +585,9 @@
       document.getElementById("groupId").append(liff.getContext().groupId)
     }
 
+    /**
+     * Get user profile information
+     */
     async function getUserProfile() {
       const profile = await liff.getProfile()
       document.getElementById("pictureUrl").src = profile.pictureUrl
@@ -568,6 +597,9 @@
       document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
     }
 
+    /**
+     * Get LIFF environment information
+     */
     function getEnvironment() {
       document.getElementById("os").append(liff.getOS())
       document.getElementById("language").append(liff.getLanguage())
@@ -583,20 +615,34 @@
       }
     }
 
+    /**
+     * Main initialization function
+     * Replace YOUR_LIFF_ID_HERE with your actual LIFF ID
+     */
     async function main() {
-      // alert("LINE Developers x iBlueCat")
-      await liff.init({ liffId: "1654259910-3Dyj5eaw" })
-      document.getElementById("isLoggedIn").append(liff.isLoggedIn())
-      if (liff.isLoggedIn()) {
-      getEnvironment()
-      getUserProfile()
-      getContext()
-      getFriendship()
-      createUniversalLink()
-      } else {
-        liff.login()
+      try {
+        // Initialize LIFF - Replace with your LIFF ID
+        await liff.init({ liffId: "1654259910-3Dyj5eaw" })
+        console.log("LIFF initialized successfully")
+        
+        document.getElementById("isLoggedIn").append(liff.isLoggedIn())
+        
+        if (liff.isLoggedIn()) {
+          getEnvironment()
+          getUserProfile()
+          getContext()
+          getFriendship()
+          createUniversalLink()
+        } else {
+          liff.login()
+        }
+      } catch (error) {
+        console.error("LIFF initialization error:", error)
+        alert("Failed to initialize LIFF. Please check your LIFF ID.")
       }
     }
+    
+    // Start the application
     main()
   </script>
 </body>
